@@ -711,3 +711,15 @@ MonoBehaviour:
     obj: {fileID: 8117088640925686289, guid: d8cb3c9228c6899ea985a27ab9c90300, type: 3}
   - ID: tractor_specialfx
     obj: {fileID: 296022853761919131, guid: b7a9026a4c637e93785e8853db21231e, type: 3}
+  - ID: chainbeamshooter_sprite
+    obj: {fileID: 21300000, guid: 4c77a7dba0461ba4486217772f701ecc, type: 3}
+  - ID: leech_shooter_sprite
+    obj: {fileID: 21300000, guid: 8e757b56835bcac499075f507274d41a, type: 3}
+  - ID: spread_shooter_sprite
+    obj: {fileID: 21300000, guid: 25e07fb8f8bca7c4cac63b8b964aca18, type: 3}
+  - ID: spread_prefab
+    obj: {fileID: 7559510902664400676, guid: 37c499917548fd04cb321d9f706c2865, type: 3}
+  - ID: AbilitySprite48
+    obj: {fileID: 21300000, guid: cf301203dd5819a41ba648fe3bde0652, type: 3}
+  - ID: AbilitySprite47
+    obj: {fileID: 21300000, guid: eaefc2a87fa0a574db7c39dfaef7bffe, type: 3}
