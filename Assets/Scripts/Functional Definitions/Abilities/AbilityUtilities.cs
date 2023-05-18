@@ -48,7 +48,9 @@ public enum AbilityID
     SpeedAura,
     EnergyAura,
     ChainBeam,
-    SpeederMissile
+    SpeederMissile,
+    Leech, // custom shit begins here
+    Spread,
 }
 
 public static class AbilityUtilities
@@ -106,6 +108,8 @@ public static class AbilityUtilities
             case 39:
             case 45:
             case 46:
+            case 47:
+            case 48:
                 return AbilityHandler.AbilityTypes.Weapons;
             case 1:
             case 2:
@@ -167,7 +171,7 @@ public static class AbilityUtilities
             case 8:
                 return $"Slow projectile that deals {Torpedo.torpedoDamage * tier} damage to ground entities.";
             case 9:
-                return $"Rapidly fires 5 projectiles that deal {Laser.laserDamage * tier} damage.";
+                return $"Rapidly fires 5 projectiles that deal {Laser.laserDamage * tier} damage. 12% pierces to core.";
             case 10:
                 if (string.IsNullOrEmpty(secondaryData))
                 {
@@ -240,6 +244,10 @@ public static class AbilityUtilities
                 return $"Instant attack that deals {Beam.beamDamage * tier} damage to multiple targets.";
             case 46:
                 return $"Slow homing projectile that deals {Missile.missileDamage * tier} damage plus more if the target was moving.";
+            case 47:
+                return $"Instant attack that deals {Leech.beamDamage*tier} damage. Saps {50*tier} energy from its target.";
+            case 48:
+                return $"Projectile spread that deals {Spread.bulletDamage * tier} damage and gets significantly weaker as it travels.";
             default:
                 return "Description unset";
         }
@@ -275,7 +283,6 @@ public static class AbilityUtilities
             case 44:
                 return null;
             case 4:
-            case 45:
                 if (data == "beamgroundshooter_sprite")
                 {
                     return "beamgroundshooter_sprite";
@@ -287,6 +294,19 @@ public static class AbilityUtilities
                 else
                 {
                     return "beamshooter_sprite";
+                }
+            case 45:
+                if (data == "beamgroundshooter_sprite")
+                {
+                    return "beamgroundshooter_sprite";
+                }
+                else if (data == "beam_station_shooter")
+                {
+                    return "beam_station_shooter";
+                }
+                else
+                {
+                    return "chainbeamshooter_sprite";
                 }
             case 5:
             case 15:
@@ -353,6 +373,10 @@ public static class AbilityUtilities
                 }
             case 40:
                 return "ability_indicator_yard_warp";
+            case 47:
+                return "leech_shooter_sprite";
+            case 48:
+                return "spread_shooter_sprite";
             default:
                 return "ability_indicator";
         }
@@ -462,6 +486,10 @@ public static class AbilityUtilities
                 return "Chain Beam";
             case 46:
                 return "Speeder Missile";
+            case 47:
+                return "Leech";
+            case 48:
+                return "Spread";
             default:
                 return "Name unset";
         }
@@ -656,6 +684,12 @@ public static class AbilityUtilities
                 break;
             case 46:
                 ability = obj.AddComponent<SpeederMissile>();
+                break;
+            case 47:
+                ability = obj.AddComponent<Leech>();
+                break;
+            case 48:
+                ability = obj.AddComponent<Spread>();
                 break;
         }
 

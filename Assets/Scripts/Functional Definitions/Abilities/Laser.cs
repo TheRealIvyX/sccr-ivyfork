@@ -3,7 +3,7 @@
 public class Laser : Bullet
 {
     public static readonly int laserDamage = 55;
-    public static readonly float laserPierceFactor = 0F;
+    public static readonly float laserPierceFactor = 0.12F;
 
     private int bulletsLeft = 0;
     private float bulletFrequency = 0.15F;
