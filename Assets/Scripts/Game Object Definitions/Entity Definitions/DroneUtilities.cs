@@ -118,7 +118,7 @@ public static class DroneUtilities
             case DroneType.Torpedo:
                 return "WEAPONS ATTACK ONLY GROUND ENTITIES.";
             case DroneType.Heavy:
-                return "REGENERATES 20 CORE PER SECOND.\n";
+                return "REGENERATES 30 EXTRA SHELL PER SECOND.\n";
             default:
                 return "";
         }
@@ -252,7 +252,7 @@ public static class DroneUtilities
             case DroneType.Light:
                 return "Spawns a Light Drone, they are lighter than usual.";
             case DroneType.Heavy:
-                return "Spawns a Heavy Drone, they regenerate their core.";
+                return "Spawns a Heavy Drone, they regenerate their shell faster than usual.";
             default:
                 return "Spawns a drone.";
         }

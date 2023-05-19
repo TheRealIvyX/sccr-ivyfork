@@ -717,9 +717,9 @@ MonoBehaviour:
     obj: {fileID: 21300000, guid: 8e757b56835bcac499075f507274d41a, type: 3}
   - ID: spread_shooter_sprite
     obj: {fileID: 21300000, guid: 25e07fb8f8bca7c4cac63b8b964aca18, type: 3}
-  - ID: spread_prefab
-    obj: {fileID: 7559510902664400676, guid: 37c499917548fd04cb321d9f706c2865, type: 3}
   - ID: AbilitySprite48
     obj: {fileID: 21300000, guid: cf301203dd5819a41ba648fe3bde0652, type: 3}
   - ID: AbilitySprite47
     obj: {fileID: 21300000, guid: eaefc2a87fa0a574db7c39dfaef7bffe, type: 3}
+  - ID: spread_prefab
+    obj: {fileID: 1074654150114366, guid: fd8d30b2f33c8ec47a813c462a31e516, type: 3}

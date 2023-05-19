@@ -24,6 +24,7 @@ public class Spread : WeaponAbility
         energyCost = 65;
         damage = bulletDamage/8;
         prefabScale = 0.6F * Vector3.one;
+        terrain = Entity.TerrainType.Air;
         category = Entity.EntityCategory.All;
         bonusDamageType = typeof(ShellCore);
     }
@@ -31,6 +32,7 @@ public class Spread : WeaponAbility
     protected override void Start()
     {
         spreadPrefab = ResourceManager.GetAsset<GameObject>("spread_prefab");
+        if (Core as Tank) terrain = Entity.TerrainType.All;
         base.Start();
     }
 

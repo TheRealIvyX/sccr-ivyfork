@@ -27,6 +27,7 @@ public class Leech : WeaponAbility
         category = Entity.EntityCategory.All;
         bonusDamageType = typeof(AirConstruct);
         cooldownDuration = 0.5f;
+        terrain = Entity.TerrainType.Air;
         targetArray = new List<Transform>();
         line.positionCount = 0;
     }
