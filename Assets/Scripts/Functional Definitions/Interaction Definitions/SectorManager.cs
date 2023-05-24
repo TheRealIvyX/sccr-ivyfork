@@ -274,7 +274,7 @@ public class SectorManager : MonoBehaviour
         // deadzone damage
         if (playerActive && current && GetCurrentType() == Sector.SectorType.DangerZone)
         {
-            if (dangerZoneTimer >= 5 && !player.GetIsDead())
+            if (dangerZoneTimer >= 4 && !player.GetIsDead())
             {
                 dangerZoneTimer = 0;
                 Instantiate(damagePrefab, player.transform.position, Quaternion.identity);
@@ -288,6 +288,12 @@ public class SectorManager : MonoBehaviour
             else
             {
                 dangerZoneTimer += Time.deltaTime;
+                if (!player.GetIsDead()) {
+                  var curHealth = player.CurrentHealth;
+                  curHealth[0] -= ((4f/5f) * 0.1f * Time.deltaTime * Mathf.Pow(player.GetMaxHealth()[0], (1/1.05f)));
+                  curHealth[1] -= ((0.025f+(deadzoneDamage/4)) * Time.deltaTime * Mathf.Pow(player.GetMaxHealth()[1], (1/1.05f)));
+                  player.CurrentHealth = curHealth;
+                }
             }
         }
         else

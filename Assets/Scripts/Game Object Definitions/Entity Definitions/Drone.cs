@@ -192,8 +192,12 @@ public class Drone : AirCraft, IOwnable
         if (Time.time > aiReenableTime && ai) ai.enabled = true;
         base.Update();
         if (owner != null) {
-          if (owner.GetUnitsCommanding().Count > owner.GetTotalCommandLimit()) { // they abused completed battlezones to drone spam, rattle 'em boys
-            this.TakeCoreDamage(this.GetMaxHealth()[1] * Random.Range(0.001F,0.02F));
+          if (PlayerCore.Instance != null) {
+            if (owner.GetTransform() == PlayerCore.Instance.GetTransform()) {
+              if (owner.GetUnitsCommanding().Count > owner.GetTotalCommandLimit()) { // they abused completed battlezones to drone spam, rattle 'em boys
+                this.TakeCoreDamage(this.GetMaxHealth()[1] * Random.Range(0.001F,0.02F));
+              }
+            }
           }
         }
         if (!draggable || (draggable && !draggable.dragging))

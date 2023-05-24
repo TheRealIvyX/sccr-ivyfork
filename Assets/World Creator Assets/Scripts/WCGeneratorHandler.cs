@@ -683,10 +683,10 @@ public class WCGeneratorHandler : MonoBehaviour
         switch (sector.type)
         {
             case Sector.SectorType.BattleZone:
-                typeRep = "Battle Zone";
+                typeRep = "Battlezone";
                 break;
             case Sector.SectorType.DangerZone:
-                typeRep = "Danger Zone";
+                typeRep = "Deadzone";
                 break;
             case Sector.SectorType.Haven:
                 typeRep = "Haven";
@@ -695,7 +695,7 @@ public class WCGeneratorHandler : MonoBehaviour
                 typeRep = "Capitol";
                 break;
             case Sector.SectorType.SiegeZone:
-                typeRep = "Siege Zone";
+                typeRep = "Siegezone";
                 break;
             default:
                 typeRep = "Sector";
