@@ -3,8 +3,8 @@ using UnityEngine.UI;
 
 public class VersionNumberScript : MonoBehaviour
 {
-    public static string version = "Ivyfork 0.0.0";
-    public static string mapVersion = "Ivyfork 0.0.0";
+    public static string version = "0.0";
+    public static string mapVersion = "Beta 2.0.0";
     public static string rdbMap = "rudderbucky server - 1";
     static VersionNumberScript instance;
     public Text episodeText;
@@ -25,7 +25,7 @@ public class VersionNumberScript : MonoBehaviour
         {
             if (instance.GetComponent<Text>())
             {
-                instance.GetComponent<Text>().text = "Version " + version;
+                instance.GetComponent<Text>().text = "Ivyfork " + version;
             }
         }
     }

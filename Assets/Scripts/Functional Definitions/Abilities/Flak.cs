@@ -12,7 +12,7 @@ public class Flak : WeaponAbility
     protected float pierceFactor = 0; // pierce factor; increase this to pierce more of the shell
     protected string bulletSound = "clip_flak";
     public static readonly int bulletDamage = 100;
-    private static readonly int BULLET_COUNT = 1;
+    private static readonly int BULLET_COUNT = 7;
 
     protected override void Awake()
     {
@@ -67,20 +67,10 @@ public class Flak : WeaponAbility
             bulletPrefab = ResourceManager.GetAsset<GameObject>("bullet_prefab");
         }
 
-        var target = Core.GetTargetingSystem().GetTarget();
-        Transform[] targets;
-        if (target != null && target.GetComponent<IDamageable>() != null)
-        {
-            targets = new Transform[] { target };
-        }
-        else
-        {
-            targets = GetClosestTargets(BULLET_COUNT, true);
-        }
-
+        Transform[] targets = GetClosestTargets(BULLET_COUNT, true);
 
         Vector3 originPos = part ? part.transform.position : Core.transform.position;
-        for (int i = 0; i < targets.Length; i++)
+        for (int i = 0; i < Mathf.Min(BULLET_COUNT, targets.Length); i++)
         {
             // Calculate future target position
             Vector2 targetVelocity = targets[i] ? targets[i].GetComponentInChildren<Rigidbody2D>().velocity : Vector2.zero;

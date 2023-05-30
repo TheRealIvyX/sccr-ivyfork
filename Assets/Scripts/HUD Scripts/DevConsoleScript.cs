@@ -363,12 +363,12 @@ public class DevConsoleScript : MonoBehaviour
             }
             else if (command.Equals("Win siege", StringComparison.CurrentCultureIgnoreCase))
             {
-                NodeEditorFramework.Standard.WinSiegeCondition.OnSiegeWin.Invoke(SectorManager.instance.current.sectorName);
+                if (NodeEditorFramework.Standard.WinSiegeCondition.OnSiegeWin != null) NodeEditorFramework.Standard.WinSiegeCondition.OnSiegeWin.Invoke(SectorManager.instance.current.sectorName);
                 textBox.text += "\n<color=lime>Should have tested it...</color>";
             }
             else if (command.Equals("Win bz", StringComparison.CurrentCultureIgnoreCase))
             {
-                NodeEditorFramework.Standard.WinBattleCondition.OnBattleWin.Invoke(SectorManager.instance.current.sectorName);
+                if (NodeEditorFramework.Standard.WinBattleCondition.OnBattleWin != null) NodeEditorFramework.Standard.WinBattleCondition.OnBattleWin.Invoke(SectorManager.instance.current.sectorName);
                 textBox.text += "\n<color=lime>The war is over.</color>";
             }
             else if (command.Equals("No limits", StringComparison.CurrentCultureIgnoreCase))
@@ -376,7 +376,7 @@ public class DevConsoleScript : MonoBehaviour
                 if (PlayerCore.Instance?.cursave != null)
                 {
                     PlayerCore.Instance.cursave.abilityCaps = PlayerCore.Instance.abilityCaps = new int[] { 99999, 99999, 99999, 99999 };
-                    textBox.text += "\n<color=lime>Ouch, now I have a headache.</color>";
+                    textBox.text += "\n<color=#00d0ff>hi teo</color>";
                 }
             }
             else if (command.Equals("I am an uncivilized barbarian", StringComparison.CurrentCultureIgnoreCase))
